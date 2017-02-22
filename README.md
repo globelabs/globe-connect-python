@@ -18,7 +18,7 @@ If you haven't signed up yet, please follow the instructions found in [Getting S
 ```python
 from globe.connect import oauth
 
-oauth = oauth.Oauth("[key]", "[secret]")
+oauth = oauth.Oauth("[app_id]", "[app_secret]")
 
 # get redirect url
 print oauth.getRedirectUrl()
@@ -57,6 +57,7 @@ sms = sms.Sms("[shortcode]","[token]")
 sms.setReceiverAddress("[receiver_address]")
 sms.setMessage("[message]")
 sms.setClientCorrelator("[correlator]")
+sms.sendMessage()
 
 print sms.getResponse()
 ```
@@ -1257,7 +1258,7 @@ payment = payment.Payment("[token]")
 payment.setAmount("[amount]")
 payment.setDescription("[description]")
 payment.setEndUserId("[number]")
-payment.setReferenceCode("[referenceCode]")
+payment.setReferenceCode("[reference]")
 payment.setTransactionOperationStatus("[status]")
 payment.sendPaymentRequest()
 
@@ -1298,7 +1299,7 @@ The following example shows how you can get the last reference of payment.
 from globe.connect import payment
 
 payment = payment.Payment("[token]")
-payment.setAppKey("[app_key]")
+payment.setAppKey("[app_id]")
 payment.setAppSecret("[app_secret]")
 payment.getLastReferenceCode()
 
@@ -1391,7 +1392,7 @@ print loc.getResponse()
 
 #### Overview
 
-TODO
+Subscriber Data Query API interface allows a Web application to query the customer profile of an end user who is the customer of a mobile network operator.
 
 #### Subscriber Balance
 
